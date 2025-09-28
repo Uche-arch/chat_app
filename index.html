@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Chat App UI</title>
+    <link rel="stylesheet" href="index.css" />
+    <style></style>
+  </head>
+  <body>
+    <!-- App Wrapper -->
+    <div id="app" class="app">
+      <!-- Left side-bar of UI -->
+      <aside class="sidebar" aria-label="friends sidebar">
+        <div class="sidebar-top">
+          <div class="logo"><img src="./img/Logo (13).png" alt="" /></div>
+          <div class="title">Messages</div>
+        </div>
+        <div class="search-wrap">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search people or message"
+          />
+        </div>
+
+        <div id="friends" class="friends" role="list">
+          <!-- List of friends rendered by JS -->
+        </div>
+
+        <!-- Bottom of sidebar (USER CARD) -->
+        <div class="sidebar-bottom">
+          <div class="user-card">
+            <div class="avatar" id="me-avatar">
+              <img src="./img/Ellipse-37-7.png" alt="" />
+            </div>
+            <div>
+              <div style="font-weight: 700">Zakk Wylde</div>
+              <div style="font-size: 13px; color: #666">@wyldetheguy</div>
+            </div>
+            <div class=""><i class="fa-solid fa-ellipsis"></i></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <!-- Right side of UI -->
+        <div id="empty" class="empty-state">
+          <div class="">
+            <h2>You don’t have a message selected.</h2>
+            <p>Choose one from your existing messages, or start a new one.</p>
+            <button id="start-new" class="newMessageBtn">New Message</button>
+          </div>
+        </div>
+
+        <!-- Chat view (hidden until a friend is selected) -->
+        <div id="chat-view">
+          <!-- Chat view header -->
+          <div class="chat-header">
+            <button
+              class="back-btn"
+              id="backBtn"
+              title="Back"
+              aria-label="Back"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="avatar" id="chat-avatar"></div>
+            <div style="display: flex; flex-direction: column">
+              <div id="chat-name" style="font-weight: 700"></div>
+              <div style="font-size: 13px; color: #666" id="chat-sub">
+                Online
+              </div>
+            </div>
+          </div>
+
+          <div id="messages" class="chat-body" role="log" aria-live="polite">
+            <!-- message bubbles -->
+          </div>
+
+          <!-- Chat view footer (Input) -->
+          <div class="chat-footer">
+            <div class="">
+              <img src="./img/Frame (1).png" alt="" />
+              <img src="./img/Frame (2).png" alt="" />
+            </div>
+            <input
+              id="messageText"
+              class="chat-input"
+              placeholder="Type a message..."
+            />
+            <button id="sendChat" class="send-btn">
+              <img src="./img/Frame.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <!-- For new message to a friend when "New Message" button is clicked -->
+    <div id="modalWrap" style="display: none" aria-hidden="true">
+      <div class="modal-back" id="modalBG">
+        <div class="modal" role="dialog" aria-modal="true">
+          <h3>New Message</h3>
+          <div class="field">
+            <label>Friend's name</label>
+            <input
+              id="modalFriend"
+              placeholder="Type friend's name or pick from list"
+            />
+          </div>
+          <div class="field">
+            <label>Message</label>
+            <textarea id="modalMsg" placeholder="Write a message..."></textarea>
+          </div>
+          <div class="modalButtons">
+            <button id="modalClose">Close</button>
+            <button id="modalSend">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

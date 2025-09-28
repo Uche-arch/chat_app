@@ -2,11 +2,7 @@
 
 :root {
   --sidebar-w: 347px;
-  --accent: #2b6cb0;
-  --muted: #f3f4f6;
   --text: #111827;
-  --bubble-you: #dbeafe;
-  --bubble-me: #e6ffed;
 }
 * {
   box-sizing: border-box;
@@ -122,9 +118,10 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
+  margin: 0 15px;
   justify-content: space-between;
-  text-align: center;
-  padding: 0 1.5rem;
+  border: 1px solid;
+  padding-top: 4px;
 }
 .user-card .avatar {
   width: 48px;
@@ -427,6 +424,19 @@ body {
   }
   .message {
     max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .logo img {
+    width: 95px;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .search-wrap {
+    padding: 10px 14px;
   }
 }
 

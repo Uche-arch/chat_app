@@ -120,7 +120,6 @@ body {
   width: 100%;
   margin: 0 15px;
   justify-content: space-between;
-  border: 1px solid;
   padding-top: 4px;
 }
 .user-card .avatar {
@@ -430,13 +429,13 @@ body {
 @media screen and (max-width: 380px) {
   .logo img {
     width: 95px;
-    margin-bottom: 1rem;
+    margin-bottom: .9rem;
   }
   .title {
     font-size: 18px;
   }
   .search-wrap {
-    padding: 10px 14px;
+    padding: 0px 14px;
   }
 }
 
